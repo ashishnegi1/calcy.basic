@@ -57,7 +57,7 @@
         <script>
 
             const textField = document.getElementById('result');
-            let tobecleared = false
+            let tobecleared = false;
             function appendforcalculation(symbol) {
                 
                 if(tobecleared){
@@ -70,7 +70,7 @@
 
             function calculate() {
 
-                tobecleared = true
+                tobecleared = true;
                 textField.value += ' = ' + eval(textField.value);
 
             }
