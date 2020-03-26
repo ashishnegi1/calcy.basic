@@ -2,8 +2,84 @@
     <head>
         <title>Calculator</title>
 
+        <style>
+            .calculator{
+                width: 350px;
+            }
+
+            .result{
+                width: 100%;
+                hight: 50px;
+                font-size: 30px;
+                padding: 1%;
+            }
+
+            .button{
+                width:33.33%;
+                height: 50px;
+                float:left;
+                cursor: pointer;
+            }
+        </style>
+
     </head>
     
-    <>
-    <>
+    <body>
+        
+        <div class = "calculator" >
+            <h1>Calculator</h1>
+            <input type="text" id="result" class="result">
+            <button class="button" onclick="clearText()">AC</button>
+            <button class="button" onclick="appendforcalculation(' % ')">%</button>
+            <button class="button" onclick="appendforcalculation(' / ')">/</button>
+
+            <button class="button" onclick="appendforcalculation(' * ')">*</button>
+            <button class="button" onclick="appendforcalculation(' + ')">+</button>
+            <button class="button" onclick="appendforcalculation(' - ')">-</button>
+
+            <button class="button" onclick="appendforcalculation('7')">7</button>
+            <button class="button" onclick="appendforcalculation('8')">8</button>
+            <button class="button" onclick="appendforcalculation('9')">9</button>
+
+            <button class="button" onclick="appendforcalculation('4')">4</button>
+            <button class="button" onclick="appendforcalculation('5')">5</button>
+            <button class="button" onclick="appendforcalculation('6')">6</button>
+
+            <button class="button" onclick="appendforcalculation('1')">1</button>
+            <button class="button" onclick="appendforcalculation('2')">2</button>
+            <button class="button" onclick="appendforcalculation('3')">3</button>
+
+            <button class="button" onclick="appendforcalculation('.')">.</button>
+            <button class="button" onclick="appendforcalculation('0')">0</button>
+            <button class="button" onclick="calculate()">=</button>
+        </div>
+
+        <script>
+
+            const textField = document.getElementById('result');
+            let tobecleared = false
+            function appendforcalculation(symbol) {
+                
+                if(tobecleared){
+                    clearText();
+                    tobecleared = false;
+                }
+                textField.value += symbol;
+
+            }
+
+            function calculate() {
+
+                tobecleared = true
+                textField.value += ' = ' + eval(textField.value);
+
+            }
+
+            function clearText() {
+
+                textField.value = '';
+
+            }
+        </script>
+    </body>
 </html>
